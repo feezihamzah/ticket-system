@@ -44,4 +44,9 @@ class SeatController extends Controller
     {
         return $this->service->confirm($reservationId);
     }
+
+    public function cancel($reservationId)
+    {
+        return $this->service->cancel($reservationId);
+    }
 }
