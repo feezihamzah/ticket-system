@@ -7,7 +7,7 @@ A simple ticket booking system built with Laravel.
 ## Setup Instructions
 
 1. Clone the repository:
-   git clone https://github.com/your-username/ticket-system.git
+   git clone https://github.com/feezihamzah/ticket-system.git
    cd ticket-system
 
 2. Install dependencies:
