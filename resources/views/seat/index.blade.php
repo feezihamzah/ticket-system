@@ -52,6 +52,9 @@
         <p id="timer">-</p>
 
         <button id="reserveBtn" onclick="reserveSeats()" class="btn-primary">Reserve</button>
+        <button id="cancelBtn" onclick="cancelReservation()" class="btn-warning" style="display:none;">
+            Cancel
+        </button>
         <button id="confirmBtn" onclick="confirmBooking()" class="btn-success" style="display:none;">
             Confirm Booking
         </button>

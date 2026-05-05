@@ -159,8 +159,40 @@ window.reserveSeats = function () {
 
             document.getElementById("confirmBtn").style.display = "block";
             document.getElementById("reserveBtn").style.display = "none";
+            document.getElementById("cancelBtn").style.display = "block";
 
             startCountdown();
+        });
+};
+
+// cancel
+window.cancelReservation = function () {
+    if (!reservationId) return;
+
+    fetch(`/reservations/${reservationId}/cancel`, {
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content"),
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data.message || "Reservation cancelled");
+
+            // reset state
+            reservationId = null;
+            selectedSeats = [];
+
+            document.getElementById("confirmBtn").style.display = "none";
+            document.getElementById("cancelBtn").style.display = "none";
+            document.getElementById("reserveBtn").style.display = "block";
+
+            document.getElementById("selectedSeatsText").innerText = "-";
+            document.getElementById("timer").innerText = "-";
+
+            loadSeats();
         });
 };
 
