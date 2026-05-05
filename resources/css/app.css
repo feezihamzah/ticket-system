@@ -1,11 +1,184 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* ===== Layout ===== */
+.app-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.left-panel {
+    text-align: center;
+}
+
+.right-panel {
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-item .seat {
+    width: 20px;
+    height: 20px;
+}
+
+.select-box {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.select-box:hover {
+    border-color: #667eea;
+}
+
+.select-box:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.2);
+    outline: none;
+}
+
+/* ===== Seat Colors ===== */
+.available {
+    background: #e5e7eb; /* light grey */
+}
+
+.selected {
+    background: orange;
+}
+
+.reserved {
+    background: red;
+    color: white;
+}
+
+.sold {
+    background: black;
+    color: white;
+}
+
+/* ===== Stage ===== */
+.screen {
+    margin: 20px auto;
+    padding: 10px;
+    width: 60%;
+    background: #ddd;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== Seats ===== */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.row-label {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.seat-group {
+    display: flex;
+}
+
+.aisle {
+    width: 40px;
+}
+
+/* ===== Seat style improve ===== */
+.seat {
+    width: 42px;
+    height: 42px;
+    margin: 4px;
+    border-radius: 8px;
+    font-size: 12px;
+    transition: 0.2s;
+    border: 1px solid black;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+    width: 100%;
+    margin-top: 10px;
+    background: #3b82f6;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.btn-success {
+    width: 100%;
+    margin-top: 10px;
+    background: #22c55e;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* ===== Success Card ===== */
+.success-card {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    width: 450px;
+    margin: 50px auto;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-card h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.success-card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.success-card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #667eea;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.success-card button:hover {
+    background: #5a67d8;
 }
